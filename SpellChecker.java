@@ -4,14 +4,14 @@ public class SpellChecker {
 
 	public static void main(String[] args) {
 		String word = args[0];
-		//String word = "hello";
+		//String word = "wombat";
 		//String word1 = "hello1";
 		//String word2 = "hpll03";
 		//System.out.println(levenshtein(word1, word2));
 
 
 		int threshold = Integer.parseInt(args[1]);
-		//int threshold = 1;
+		//int threshold = 2;
 		String[] dictionary = readDictionary("dictionary.txt");
 		String correction = spellChecker(word, threshold, dictionary);
 		System.out.println(correction);
@@ -68,7 +68,7 @@ public class SpellChecker {
 		String closest = "";
 		for (int i = 0; i < dictionary.length; i++) {
 			int distance = levenshtein(word,dictionary[i]);
-			if (distance == 1){
+			if (distance == 0){
 				return dictionary[i];
 			}
 
@@ -76,7 +76,7 @@ public class SpellChecker {
 				int x = 3;
 			}
 
-			if (distance <= threshold && !dictionary[i].equals(word)){
+			if (distance <= threshold){
 
 				if (min == -1){
 					closest = dictionary[i];
