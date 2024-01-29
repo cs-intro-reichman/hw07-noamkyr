@@ -72,9 +72,6 @@ public class SpellChecker {
 				return dictionary[i];
 			}
 
-			if(dictionary[i].equals("woman")){
-				int x = 3;
-			}
 
 			if (distance <= threshold){
 
