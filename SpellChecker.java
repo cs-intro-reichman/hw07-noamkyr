@@ -4,21 +4,20 @@ public class SpellChecker {
 
 	public static void main(String[] args) {
 		String word = args[0];
-		//String word = "lisense";
+		//String word = "hello";
 		//String word1 = "hello1";
 		//String word2 = "hpll03";
 		//System.out.println(levenshtein(word1, word2));
 
 
 		int threshold = Integer.parseInt(args[1]);
-		//int threshold = 2;
+		//int threshold = 1;
 		String[] dictionary = readDictionary("dictionary.txt");
 		String correction = spellChecker(word, threshold, dictionary);
 		System.out.println(correction);
 	}
 
 	public static String tail(String str) {
-		// Your code goes here
 		return str.substring(1).toLowerCase();
 	}
 
@@ -73,7 +72,12 @@ public class SpellChecker {
 				return dictionary[i];
 			}
 
-			if (distance <= threshold){
+			if(dictionary[i].equals("woman")){
+				int x = 3;
+			}
+
+			if (distance <= threshold && !dictionary[i].equals(word)){
+
 				if (min == -1){
 					closest = dictionary[i];
 					min = distance;
