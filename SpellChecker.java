@@ -19,7 +19,7 @@ public class SpellChecker {
 
 	public static String tail(String str) {
 		// Your code goes here
-		return str.substring(1);
+		return str.substring(1).toLowerCase();
 	}
 
 	public static int levenshtein(String word1, String word2) {
@@ -40,6 +40,8 @@ public class SpellChecker {
 
 		}
 		int count = 0;
+		word1 = word1.toLowerCase();
+		word2 = word2.toLowerCase();
 		if (word1.charAt(0) != word2.charAt(0)){
 			count ++;
 		}
