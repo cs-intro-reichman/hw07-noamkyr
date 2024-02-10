@@ -57,6 +57,7 @@ public class HashTagTokenizer {
 				has_found = true;
 				next_index = i;
 				System.out.println(current);
+				// #feedback - you should call breakHashTag here and break from the loop, otherwise the loop continues and can print other words, which is not expected.
 			}
         }
 
