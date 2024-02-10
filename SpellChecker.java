@@ -27,6 +27,7 @@ public class SpellChecker {
 
 		// return the difference of the length
 		if (word1.isEmpty()){
+			// #feedback - note that the below if is redundant, if word2 is empty, then word2.length() will return 0
 			if (word2.isEmpty()){
 				return 0;
 			} else {
@@ -72,7 +73,7 @@ public class SpellChecker {
 	public static String spellChecker(String word, int threshold, String[] dictionary) {
 
 		// holds the minimal distance
-		int min = -1;
+		int min = -1
 
 		// holds the closest word
 		String closest = "";
@@ -91,6 +92,8 @@ public class SpellChecker {
 			if (distance <= threshold){
 
 				// if the first word below threshold update the minimal distance and the minimal distance
+				// #feedback - note that both if and else do the same commands, so you can have one if with or -
+				// if (min == -1 || distance < min)
 				if (min == -1){
 					closest = dictionary[i];
 					min = distance;
